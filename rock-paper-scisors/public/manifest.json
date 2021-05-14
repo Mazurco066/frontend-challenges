@@ -1,6 +1,6 @@
 {
-  "name": "Rock, Paper and Scisors",
-  "short_name": "Rock, Paper and Scisors",
+  "name": "Rock, Paper and Scissors",
+  "short_name": "Rock, Paper and Scissors",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#14173a",
-  "description": "Rock, Paper and Scisors",
+  "description": "Rock, Paper and Scissors",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#14173a"

@@ -1,3 +1,4 @@
+import useGame from './useGame'
 import useWindowDimensions from './useWindowDimentions'
 
-export { useWindowDimensions }
+export { useGame, useWindowDimensions }

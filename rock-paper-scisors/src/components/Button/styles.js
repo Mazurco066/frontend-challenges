@@ -12,10 +12,13 @@ export const Button = styled.button`
   border: 1px solid var(--white);
   background-color: transparent;
   color: var(--white);
+
   &:hover {
     color: var(--primary);
     background-color: var(--white);
     cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
     opacity: 0.75;
   }
+
+  transition: all 0.3s;
 `

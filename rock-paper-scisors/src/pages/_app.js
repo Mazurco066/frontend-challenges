@@ -4,6 +4,7 @@ import NextNprogress from 'nextjs-progressbar'
 import PropTypes from 'prop-types'
 import { ToastContainer } from 'react-toastify'
 import { ModalProvider } from 'styled-react-modal'
+import { GameProvider } from 'providers'
 
 // App styles
 import GlobalStyles from 'styles/global'
@@ -14,17 +15,19 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Rock, Paper and Scisors</title>
+        <title>Rock, Paper and Scissors</title>
         <link rel="shortcut icon" href="/img/favicon-32x32.png" />
         <link rel="apple-touch-icon" href="/img/favicon-32x32.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#14173a" />
-        <meta name="description" content="Rock, Paper and Scisors" />
+        <meta name="description" content="Rock, Paper and Scissors" />
       </Head>
       <NextNprogress color="#14173a" startPosition={0.3} stopDelayMs={200} height={3} />
       <GlobalStyles />
       <ModalProvider>
-        <Component {...pageProps} />
+        <GameProvider>
+          <Component {...pageProps} />
+        </GameProvider>
       </ModalProvider>
       <ToastContainer position="bottom-right"/>
     </>

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 // Styles
 export const Wrapper = styled.div`
   padding-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `
 
 export const ScoreBoard = styled.div`
