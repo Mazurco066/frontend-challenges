@@ -1,16 +1,19 @@
 // Dependencies
 import styled, { createGlobalStyle } from 'styled-components'
+import Modal from 'styled-react-modal'
 
 // Styles
 const GlobalStyles = createGlobalStyle`
   // Theme colors
   :root {
-    --primary: #e20e8d;
+    --primary: #3b488e;
     --secondary: #030518;
+    --darker: #545066;
 
-    --highlight: #e20e8d;
-    --background: #030518;
-    --white: #eeeeee;
+    --highlight: #3b488e;
+    --background: #14173a;
+    --white: #fdfdfd;
+    --gray: #d0d1d6;
 
     --container: 100rem;
 
@@ -29,7 +32,8 @@ const GlobalStyles = createGlobalStyle`
   // Page parent container
   html, body, #__next {
     height: 100%;
-    background-color: var(--background);
+    background: rgb(30,55,86);
+    background: radial-gradient(circle at top, rgba(30,55,86,1) 0%, rgba(20,23,58,1) 100%);
     color: var(--white);
     scroll-behavior: smooth;
   }
@@ -69,6 +73,49 @@ const GlobalStyles = createGlobalStyle`
     }
     transition: all 0.3s;
   }  
+`
+
+// Modal
+export const CustomModal = Modal.styled`
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background-color: var(--white);
+  max-width: 450px;
+  padding: 32px;
+  overflow-y: auto;
+  max-height: 90%;
+  @media only screen and (max-width: 767px) {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
 `
 
 // Calc column width func

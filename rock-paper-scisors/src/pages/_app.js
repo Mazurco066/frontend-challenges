@@ -3,6 +3,7 @@ import Head from 'next/head'
 import NextNprogress from 'nextjs-progressbar'
 import PropTypes from 'prop-types'
 import { ToastContainer } from 'react-toastify'
+import { ModalProvider } from 'styled-react-modal'
 
 // App styles
 import GlobalStyles from 'styles/global'
@@ -13,21 +14,18 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Styled nextjs - Boilerplate</title>
-        <link rel="shortcut icon" href="/img/icon-512.png" />
-        <link rel="apple-touch-icon" href="/img/icon-512.png" />
+        <title>Rock, Paper and Scisors</title>
+        <link rel="shortcut icon" href="/img/favicon-32x32.png" />
+        <link rel="apple-touch-icon" href="/img/favicon-32x32.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#e20e8d" />
-        <meta name="description" content="Nextjs styled boilerplate" />
+        <meta name="theme-color" content="#14173a" />
+        <meta name="description" content="Rock, Paper and Scisors" />
       </Head>
-      <NextNprogress
-        color="#e20e8d"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-      />
+      <NextNprogress color="#14173a" startPosition={0.3} stopDelayMs={200} height={3} />
       <GlobalStyles />
-      <Component {...pageProps} />
+      <ModalProvider>
+        <Component {...pageProps} />
+      </ModalProvider>
       <ToastContainer position="bottom-right"/>
     </>
   )
