@@ -94,6 +94,11 @@ export const Choice = styled.div`
 
   transition: all 0.3s;
 
+  @media(max-width: 576px) {
+    width: 144px;
+    height: 144px;
+  }
+
   ${({ winner }) => winner && `
     box-shadow:
     0 0 0 48px #fdfdfd30,
@@ -110,6 +115,10 @@ export const Icon = styled.img`
 
 export const Winner = styled.div`
   flex: 0 0 auto;
+
+  @media(max-width: 576px) {
+    margin-top: 2rem;
+  }
 `
 
 export const Button = styled.button`

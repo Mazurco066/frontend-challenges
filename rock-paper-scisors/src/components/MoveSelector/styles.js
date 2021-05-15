@@ -129,6 +129,11 @@ export const Board = styled.div`
   background-image: url('/img/bg-triangle.svg');
   background-position: center;
   background-repeat: no-repeat;
+
+  @media(max-width: 576px) {
+    background-size: 200px;
+    background-position-y: 48px;
+  }
 `
 
 export const BoardRow = styled.div`

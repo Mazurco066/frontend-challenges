@@ -28,6 +28,11 @@ export const Wrapper = styled.div`
     0 0 0 32px #fdfdfd10;
   }
 
+  @media(max-width: 576px) {
+    width: 100px;
+    height: 100px;
+  }
+
   transition: all 0.3s;
 `
 
@@ -35,4 +40,9 @@ export const Icon = styled.img`
   width: 56px;
   height: 56px;
   object-fit: contain;
+
+  @media(max-width: 576px) {
+    width: 36px;
+    height: 36px;
+  }
 `

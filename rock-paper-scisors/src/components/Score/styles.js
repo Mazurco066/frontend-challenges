@@ -25,18 +25,30 @@ export const Info = styled.div`
   align-items: flex-start;
   justify-content: center;
   max-height: 96px;
+
+  @media(max-width: 576px) {
+    max-height: 64px;
+  }
 `
 
 export const Logo = styled.img`
   max-height: 96px;
   object-fit: contain;
   object-position: left;
+
+  @media(max-width: 576px) {
+    max-height: 64px;
+  }
 `
 
 export const Title = styled.h3`
   color: var(--primary);
   text-transform: uppercase;
   font-weight: bold;
+
+  @media(max-width: 576px) {
+    font-size: 1rem;
+  }
 `
 
 export const Points = styled.div`
@@ -49,6 +61,15 @@ export const Points = styled.div`
   border-radius: 16px;
   height: 96px;
   width: 25%;
+
+  @media(max-width: 576px) {
+    height: 64px;
+
+    span {
+      font-size: 2rem!important;
+      line-height: 2rem!important;
+    }
+  }
 
   span {
     display: block;

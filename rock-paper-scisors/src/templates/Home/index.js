@@ -30,11 +30,13 @@ export default function HomeTemplate() {
       <Container style={{ minHeight: '100%', height: '100%' }}>
         <Score score={score} />
         {!choice ? (
-          <GameBoard onPlayerSelect={(choice) => setChoice(choice)} />
+          <>
+            <GameBoard onPlayerSelect={(choice) => setChoice(choice)} />
+            <Rules onPress={() => setModalState(true)} />
+          </>
         ) : (
           <Results choice={choice} onReset={() => setChoice(null)} />
         ) }
-        <Rules onPress={() => setModalState(true)} />
       </Container>
       <CustomModal
         onEscapeKeydown={() => setModalState(false)}

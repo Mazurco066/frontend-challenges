@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { COLORS } from 'helpers'
-import { useGame } from 'hooks'
+import { useGame, useWindowDimensions} from 'hooks'
 
 // Styles
 import * as S from './styles'
@@ -15,6 +15,7 @@ export default function Results({ choice, onReset }) {
 
   // Hooks
   const { dispatch } = useGame()
+  const { width } = useWindowDimensions()
   const [ computerChoice, setComputerChoice ] = useState(null)
   const [ win, setWin ] = useState(null)
 
@@ -59,14 +60,16 @@ export default function Results({ choice, onReset }) {
             <S.Icon src={`/img/icon-${choice}.svg`} alt="choice" />
           </S.Choice>
         </S.Display>
-        <S.Winner>
-          {computerChoice && (
-            <>
-              <S.BigLabel>{win === null ? 'Match' : win ? 'You win' : 'You lose'  }</S.BigLabel>
-              <S.Button type="button" onClick={onReset}>Play Again</S.Button>
-            </>
-          )}
-        </S.Winner>
+        { width >= 576 && (
+          <S.Winner>
+            {computerChoice && (
+              <>
+                <S.BigLabel>{win === null ? 'Match' : win ? 'You win' : 'You lose'  }</S.BigLabel>
+                <S.Button type="button" onClick={onReset}>Play Again</S.Button>
+              </>
+            )}
+          </S.Winner>
+        ) }
         <S.Display>
           <S.Label>The house picked</S.Label>
           <S.Choice winner={win === false} color={COLORS[computerChoice]}>
@@ -78,6 +81,16 @@ export default function Results({ choice, onReset }) {
           </S.Choice>
         </S.Display>
       </S.DisplayResults>
+      { width < 576 && (
+        <S.Winner>
+          {computerChoice && (
+            <>
+              <S.BigLabel>{win === null ? 'Match' : win ? 'You win' : 'You lose'  }</S.BigLabel>
+              <S.Button type="button" onClick={onReset}>Play Again</S.Button>
+            </>
+          )}
+        </S.Winner>
+      ) }
     </S.Wrapper>
   )
 }
